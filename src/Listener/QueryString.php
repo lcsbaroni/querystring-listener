@@ -8,7 +8,6 @@ use Symfony\Component\HttpKernel\KernelEvents;
 
 class QueryString implements EventSubscriberInterface
 {
-
     /**
      * @return array
      */
@@ -29,11 +28,11 @@ class QueryString implements EventSubscriberInterface
             return false;
         }
 
-        $params = explode("&", $query);
+        $params = explode('&', $query);
 
         $filters = [];
         foreach ($params as $item) {
-            $filter = explode("=", $item);
+            $filter = explode('=', $item);
             $filters[$filter[0]][] = $filter[1];
         }
 

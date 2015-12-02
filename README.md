@@ -9,25 +9,6 @@
 
 Parsing query string with multiple values and same names.
 
-Example:
-```php
-//http:url.com?param=foo&filter=a:b&filter=c=d
-
-var_dump($request->get('param'));
-var_dump($request->get('filter'));
-```
-The example above will print:
-```php
-string(3) "foo"
-array(3) {
-  [0]=>
-  string(3) "a:b"
-  [1]=>
-  string(3) "c:d"
-}
-
-```
-
 ## Instalation
 The package is available on [Packagist](http://packagist.org/packages/dafiti/querystring-listener).
 Autoloading is [PSR-4](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-4-autoloader.md) compatible.
@@ -49,6 +30,25 @@ use Silex\Application;
 $app = new Application();
 
 $app['dispatcher']->addSubscriber(new Listener\QueryString());
+```
+
+#### Example:
+```php
+//http:url.com?param=foo&filter=a:b&filter=c=d
+
+var_dump($request->get('param'));
+var_dump($request->get('filter'));
+```
+The example above will print:
+```php
+string(3) "foo"
+array(3) {
+  [0]=>
+  string(3) "a:b"
+  [1]=>
+  string(3) "c:d"
+}
+
 ```
 
 ## License
