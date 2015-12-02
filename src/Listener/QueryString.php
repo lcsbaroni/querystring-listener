@@ -41,7 +41,7 @@ class QueryString implements EventSubscriberInterface
                 $values = current($values);
             }
 
-            $request->request->set($key, $values);
+            $request->query->set($key, $values);
         }
     }
 }
